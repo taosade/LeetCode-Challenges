@@ -41,7 +41,7 @@ class Solution
 			current -= 1
 		}
 
-		// If nums2 array still has elemnts left:
+		// If nums2 array still has elements left:
 
 		while pointer2 >= 0
 		{
