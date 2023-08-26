@@ -19,21 +19,16 @@ class Solution
 {
 	// Expected solution using pointers
 	
-	func merge(_ nums1: inout [Int], _ m: Int, _ nums2: [Int], _ n: Int)
-	{
+	func merge(_ nums1: inout [Int], _ m: Int, _ nums2: [Int], _ n: Int) {
 		var pointer1 = m - 1
 		var pointer2 = n - 1
 		var current = m + n - 1
 
-		while pointer1 >= 0 && pointer2 >= 0
-		{
-			if nums1[pointer1] >= nums2[pointer2]
-			{
+		while pointer1 >= 0 && pointer2 >= 0 {
+			if nums1[pointer1] >= nums2[pointer2] {
 				nums1[current] = nums1[pointer1]
 				pointer1 -= 1
-			}
-			else
-			{
+			} else {
 				nums1[current] = nums2[pointer2]
 				pointer2 -= 1
 			}
@@ -43,8 +38,7 @@ class Solution
 
 		// If nums2 array still has elements left:
 
-		while pointer2 >= 0
-		{
+		while pointer2 >= 0 {
 			nums1[current] = nums2[pointer2]
 			pointer2 -= 1
 			current -= 1
@@ -53,8 +47,7 @@ class Solution
 
 	// One line solution using Array.sorted()
 
-	func mergeOneLiner(_ nums1: inout [Int], _ m: Int, _ nums2: [Int], _ n: Int)
-	{
+	func mergeOneLiner(_ nums1: inout [Int], _ m: Int, _ nums2: [Int], _ n: Int) {
 		nums1 = (nums1[..<m] + nums2).sorted()
 	}
 }
