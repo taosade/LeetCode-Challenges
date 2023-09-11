@@ -16,15 +16,18 @@ elements of 'nums' are not important as well as the size of 'nums'.
 
 */
 
-class Solution {
-
+class Solution
+{
 	// Expected solution using a pointer
 	
-	func removeElement(_ nums: inout [Int], _ val: Int) -> Int {
+	func removeElement(_ nums: inout [Int], _ val: Int) -> Int
+	{
 		var i = 0
 	
-		for num in nums {
+		for num in nums
+		{
 			guard num != val else { continue }
+			
 			nums[i] = num
 			i += 1
 		}
@@ -34,7 +37,8 @@ class Solution {
 
 	// Straightforward approach
 
-	func removeElementStraightforward(_ nums: inout [Int], _ val: Int) -> Int {
+	func removeElementStraightforward(_ nums: inout [Int], _ val: Int) -> Int
+	{
 		nums = nums.filter { num in num != val }
 	
 		return nums.count
