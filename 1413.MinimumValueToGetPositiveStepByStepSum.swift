@@ -11,12 +11,15 @@ by step sum is never less than 1.
 
 */
 
-class Solution {
-	func minStartValue(_ nums: [Int]) -> Int {
+class Solution
+{
+	func minStartValue(_ nums: [Int]) -> Int
+	{
 		var acc = 0
 		var min = 0
 
-		for num in nums {
+		for num in nums
+		{
 			acc += num
 
 			if acc < min { min = acc }
