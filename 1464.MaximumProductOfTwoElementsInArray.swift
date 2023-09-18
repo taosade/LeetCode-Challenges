@@ -10,7 +10,7 @@ class Solution
 {
 	// Straightforward solution
 
-	func maxProduct2(_ nums: [Int]) -> Int {
+	func maxProduct(_ nums: [Int]) -> Int {
 		guard
 			nums.count > 1,
 			nums.filter({ i in i < 1 }).count == 0
@@ -31,7 +31,7 @@ class Solution
 
 	// Solution using sort
 
-	func maxProduct(_ nums: [Int]) -> Int {
+	func maxProductWithSort(_ nums: [Int]) -> Int {
 		guard
 			nums.count > 1,
 			nums.filter({ i in i < 1 }).count == 0
