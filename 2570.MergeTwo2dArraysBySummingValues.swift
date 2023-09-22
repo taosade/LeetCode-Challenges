@@ -26,17 +26,21 @@ class Solution
 {
 	func mergeArrays(_ nums1: [[Int]], _ nums2: [[Int]]) -> [[Int]]
 	{
-		guard !nums1.isEmpty && !nums2.isEmpty else { return [] }
+		guard !nums1.isEmpty else { return nums2 }
+		guard !nums2.isEmpty else { return nums1 }
 
 		var pointer1 = 0, pointer2 = 0
 		var res = [[Int]]()
 
 		while true
 		{
-			// Check if one of the pointers reached the end
+			// Check if one of the pointers has reached the end
 
-			guard pointer1 < nums1.count else { res.append(contentsOf: nums2[pointer2...]); break }
-			guard pointer2 < nums2.count else { res.append(contentsOf: nums1[pointer1...]); break }
+			guard pointer1 < nums1.count
+			else { res.append(contentsOf: nums2[pointer2...]); break }
+
+			guard pointer2 < nums2.count
+			else { res.append(contentsOf: nums1[pointer1...]); break }
 
 			// Next 'nums1' element has lower ID
 
