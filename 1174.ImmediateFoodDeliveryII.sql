@@ -15,15 +15,15 @@ first orders of all customers, rounded to 2 decimal places.
 
 SELECT ROUND
 (
-	COUNT(IF(order_date = customer_pref_delivery_date, delivery_id, NULL)) /
-	COUNT(delivery_id)
+	COUNT(IF(`Delivery`.order_date = `Delivery`.customer_pref_delivery_date, `Delivery`.delivery_id, NULL)) /
+	COUNT(`Delivery`.delivery_id)
 	* 100,
 	2
-) AS immediate_percentage
-FROM Delivery
-WHERE (customer_id, order_date) IN
+) AS 'immediate_percentage'
+FROM `Delivery`
+WHERE (`Delivery`.customer_id, `Delivery`.order_date) IN
 (
-	SELECT customer_id, MIN(order_date)
-	FROM Delivery
-	GROUP BY customer_id
+	SELECT `Delivery`.customer_id, MIN(`Delivery`.order_date)
+	FROM `Delivery`
+	GROUP BY `Delivery`.customer_id
 )
