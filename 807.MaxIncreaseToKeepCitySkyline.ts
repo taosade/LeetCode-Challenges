@@ -23,7 +23,9 @@ direction.
 */
 
 function maxIncreaseKeepingSkyline(grid: number[][]): number {
+
 	// Check grid consistency
+
 	for (let i = 1; i < grid.length; i++)
 		if (grid[i].length !== grid[0].length)
 			throw new Error('Uneven grid')
@@ -32,6 +34,7 @@ function maxIncreaseKeepingSkyline(grid: number[][]): number {
 	const yMaxHeights: number[] = []
 
 	// Find max heights for each row and column
+
 	for (let x = 0; x < grid.length; x++) {
 		for (let y = 0; y < grid[x].length; y++) {
 			if (!Number.isInteger(grid[x][y]) || grid[x][y] < 0)
@@ -44,8 +47,8 @@ function maxIncreaseKeepingSkyline(grid: number[][]): number {
 
 	let res = 0
 
-	// Sum differences between each building's height and
-	// min of max heights within building's row/column
+	// Sum difs between each building's height and min of max heights
+
 	for (let x = 0; x < xMaxHeights.length; x++) {
 		for (let y = 0; y < yMaxHeights.length; y++) {
 			res += Math.min(xMaxHeights[x], yMaxHeights[y]) - grid[x][y]
