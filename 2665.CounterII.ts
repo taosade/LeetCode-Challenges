@@ -27,5 +27,3 @@ function createCounter(init: number): ReturnObj
 		reset() { return count = init }
 	}
 }
-
-/* A comment to test Git commit */
