@@ -22,11 +22,10 @@ function validMountainArray(arr: number[]): boolean
 		if
 		(
 			!Number.isInteger(arr[i]) ||
-			!Number.isInteger(arr[i - 1])
+			!Number.isInteger(arr[i - 1]) ||
+			arr[i] === arr[i - 1]
 		)
 			return false
-
-		if (arr[i] === arr[i - 1]) return false
 
 		if (arr[i]! < arr[i - 1]!)
 		{
